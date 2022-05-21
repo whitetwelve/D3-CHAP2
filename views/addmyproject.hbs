@@ -1,0 +1,264 @@
+<html>
+
+    {{> header}}
+  {{> navbar }}
+<body>
+ 
+    <div class="content-body">
+        
+        <form onsubmit="addData(event)" action = "/add" method= "POST">
+
+            <h1 class="fw-bolder text-center">ADD MY PROJECT</h1>
+            <br>
+            <div class="row col-4">
+                <label for="pn">Project Name</label>
+                <input type="text" name="name" id="pn" class="form-control shadow-lg mb-5 bg-body" autocomplete="off">
+            </div>
+            <div class="row g-3">
+                <div class="col-3">
+                    <label for="str">Start Date</label>
+                    <input type="date" class="form-control shadow-lg  mb-5 bg-body" id="str" name="start_date">
+                </div>
+                <div class="col-3">
+                    <label for="end">End Date</label>
+                    <input type="date" name="end_date" class="form-control shadow-lg  mb-5 bg-body" id="end">
+                </div>
+            </div>
+            <div class="row col-4">
+                <label for="desc" class="form-label">Description</label>
+                <textarea class="form-control shadow-lg  mb-5 bg-body" name="description" style="resize:none" id="desc" rows="5"></textarea>
+            </div>
+            <div class="checkbox">
+                <p>Technologies</p>
+                <div class="form-check form-check-inline" id="tech">
+                    <input class="form-check-input" name="nodeJs" type="checkbox" id="node" value="NodeJs">
+                    <label class="form-check-label" for="node">Node Js&nbsp;</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" name="nextJs" type="checkbox" id="next" value="NextJs">
+                    <label class="form-check-label" for="next">Next Js</label>
+                </div>
+                <br>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" name="reactJs" type="checkbox" id="react" value="ReactJs">
+                    <label class="form-check-label" for="react">React Js</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" name="typeScript" type="checkbox" id="type" value="TypeScript">
+                    <label class="form-check-label" for="type">TypeScript</label>
+                </div>
+            </div>
+            <br>
+            <div class="row col-4">
+                <label for="upload" class="form-label">Upload Image</label>
+                <input class="form-control shadow-lg  mb-5 bg-body" type="file" id="upload">
+            </div>
+            <button type="submit" class="btn btn-dark rounded-pill">submit</button>
+           
+    </div>
+
+    </form>
+    </div>
+
+    <br class='new-line'>
+    <br>
+
+    <div class="title" style="text-align: center;">
+        <h1 id="supbro"><strong>MY PROJECT</strong></h1><br><br>
+        <div class="container">
+              <!-- Blog list -->
+            <div id="contents" class="project-list">
+                
+                <div class="my-project">
+                    <div class="card shadow-lg mb-4" style="width: 26rem;">
+                        <img class="card-img-top" src="https://media.istockphoto.com/photos/global-connection-picture-id1335295270?s=612x612" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title" ; style=" margin-left: 10px; text-decoration: none;"><a href="detail-project1.html" onclick="projectDetail(event)" style="color:black">Dumbways Mobile App - 2021</a></h5>
+                            <small style="color: rgb(134, 130, 130); margin-left: 10px; ">durasi : 3 bulan</small>
+                            <br>
+                            <p class="card-text ">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum fuga accusamus iste nesciunt beatae molestias. Perspiciatis voluptate beatae obcaecati reprehenderit.
+                            </p>
+                            <div class="logo ">
+                                <i class="fa-brands fa-node fa-2x "></i>
+                                <i class="fa-brands fa-react fa-2x "></i>
+                                <img src="/publicimg/nextjs.png" alt="nextJs">
+                                <img src="/public/img/typescript.png" alt="typescript">
+                            </div>
+                            <div class="btn ">
+                                &nbsp;&nbsp;<button href="#edites " class="btn btn-dark " style="width: 170px;" id="edit">Edit</button>
+                                <button href="#deletes " class="btn btn-dark " style="width: 170px;" id="delete">Delete</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                {{!-- {{#each dataProject}} --}}
+                <div class="my-project">
+                    <div class="card shadow-lg mb-4" style="width: 26rem;">
+                        <img class="card-img-top" src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title" ; style=" margin-left: 10px;"><a href="detail-project2.html" style="color:black; text-decoration: none;"> Dumbways Mobile App - 2021 </a></h5>
+                            </h5>
+                            <small style="color: rgb(134, 130, 130); margin-left: 10px; ">durasi : 3 bulan</small>
+                            <br>
+                            <p class="card-text ">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum fuga accusamus iste nesciunt beatae molestias. Perspiciatis voluptate beatae obcaecati reprehenderit.
+                            </p>
+                            <div class="logo ">
+                                <i class="fa-brands fa-node fa-2x "></i>
+                                <i class="fa-brands fa-react fa-2x "></i>
+                                <img src="./public/img/nextjs.png" alt="nextJs">
+                                <img src="./public/img/typescript.png" alt="typescript">
+                            </div>
+                            <div class="btn ">
+                                &nbsp;&nbsp;<button href="#edites " class="btn btn-dark " style="width: 170px;" id="edit">Edit</button>
+                                <button href="#deletes " class="btn btn-dark " style="width: 170px;" id="delete">Delete</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {{!-- {{/each}}
+            </div> --}}
+        </div>
+    </div>
+        </div>
+    </div>
+    </div>
+    <style>
+        .title {
+            background-color: white;
+            padding: 60px 0px;
+            width: 100%;
+        }
+        
+        #contents {
+            background-color: white;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .my-project .card {
+            border-radius: 20px;
+            margin: 0px 30px;
+        }
+        
+        .my-project .card img {
+            border: none;
+            border-radius: 20px;
+            height: 300px;
+            width: 380px;
+            margin-left: 15px;
+            margin-top: 10px;
+        }
+        
+        .my-project .card .card-body {
+            text-align: left;
+        }
+        
+        .my-project .card .card-body button {
+            border-radius: 8px;
+            padding-top: 0px;
+            padding-bottom: 0px;
+            margin-top: 10px;
+        }
+        
+        .my-project .card .card-body .logo {
+            display: inline;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+        
+        .my-project .card .card-body .logo img {
+            width: 36px;
+            height: 36px;
+            margin-bottom: 20px;
+        }
+        
+        .my-project .card .card-body .logo i {
+            padding-left: 10px;
+            padding-right: 5px;
+            padding-top: 10px;
+        }
+        
+        .card .card-body .card-text {
+            text-align: left;
+            line-height: 4vh;
+            margin-left: 10px;
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+        
+        body {
+            background-color: rgb(221, 218, 218);
+        }
+        
+        .button-group {
+            position: relative;
+        }
+        
+        .btn-edit {
+            padding: 5px 10px;
+            border: 0;
+            border-radius: 4px;
+            background: #4a23b6;
+            color: white;
+            margin-right: 10px;
+            text-decoration: none;
+        }
+        
+        .btn-post {
+            padding: 5px 10px;
+            border: 0;
+            border-radius: 4px;
+            background: #df280f;
+            color: #fff;
+            text-decoration: none;
+        }
+        
+        a {
+            text-decoration: none;
+        }
+        
+        .rounded-pill {
+            margin-left: 800px;
+            height: 37px;
+            width: 100px;
+        }
+        
+        .checkbox label {
+            margin-top: 5px;
+        }
+        
+        .checkbox {
+            margin-left: 450px;
+        }
+        
+        .checkbox input {
+            width: 22px;
+            height: 22px;
+        }
+        
+        .form-check-inline {
+            margin-left: 10;
+        }
+        
+        .row {
+            margin-left: 450px;
+        }
+        
+        form h1 {
+            margin-top: 90px;
+        }
+        
+        body {
+            background-color: rgb(221, 218, 218);
+        }
+        
+        * {
+            font-family: 'Poppins';
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js " integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM " crossorigin="anonymous "></script>
+</body>
+
+</html>
